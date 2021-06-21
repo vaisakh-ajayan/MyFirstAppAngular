@@ -1,0 +1,14 @@
+<!-- <p>Server with {{serverId}} is {{serverStatus}}</p> -->
+<p [ngStyle]="{backgroundColor:getColorStatus()}" [ngClass]="{ online: getServerStatus() === 'online' }">
+    <!-- Server class with {{serverId}} is {{getServerStatus()}} -->
+</p>
+<div class="card mb-3">
+    <div class="card-header">
+        <ng-content></ng-content>
+        <!-- <strong *ngIf="element.type==='server'" style="color: red;">{{element.name}}</strong>
+        <strong *ngIf="element.type==='blueprint'" style="color: blue;">{{element.name}}</strong> -->
+    </div>
+    <div class="card-body">
+        <p class="card-text">{{ element.content }}</p>
+    </div>
+</div>

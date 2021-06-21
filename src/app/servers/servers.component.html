@@ -1,0 +1,38 @@
+<div class="app-server" *ngFor="let server of servers; let i=index" [element]="server">
+  <a routerLink="{{'/server/' + i}}">
+    <strong *ngIf="server.type === 'server'" style="color: red;">{{
+      server.name|uppercase|shorten:5
+    }}</strong>
+    <p class="float-right">{{server.created_on|date:"fullDate"}}</p>
+    <strong *ngIf="server.type === 'blueprint'" style="color: blue;">{{
+      server.name|shorten:10
+    }}</strong>
+  </a>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-server></app-server>
+<app-server></app-server> -->
+<!--data bindings-->
+<!-- <input type="text" [(ngModel)]="serverName">
+<button class="btn btn-primary" [disabled]="!allowServer" (click)="onCreateServer()">Add Server</button>
+<p *ngIf="serverCreated; else noServer">Server has been created and the Server name is {{ serverName }}</p>
+<ng-template #noServer>
+    <p>No server is created</p>
+</ng-template>
+<hr>
+<input type="text" [(ngModel)]="inName" #ctl="ngModel" required>
+<p>Value: {{inName}}, Valid: {{ctl.valid}}</p><hr>
+
+<div class="app-server" *ngFor="let server of servers"></div> -->
+
