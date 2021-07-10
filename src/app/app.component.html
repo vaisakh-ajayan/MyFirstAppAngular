@@ -26,6 +26,14 @@
         true}" routerLinkActive="active" >
         <a class="nav-link" routerLink="/blogs" href="#" >Blogs</a>
       </li>
+      <li *ngIf="!isLoggedIn" class="nav-item" [routerLinkActiveOptions]="{exact:
+        true}" routerLinkActive="active" >
+        <a class="nav-link" routerLink="/authenticate" href="#" >Authenticate</a>
+      </li>
+      <li *ngIf="isLoggedIn" class="nav-item" [routerLinkActiveOptions]="{exact:
+        true}" routerLinkActive="active" >
+        <a class="nav-link" (click)="onLogout()">Logout</a>
+      </li>
     </ul>
   </div>
 </nav>

@@ -19,6 +19,7 @@ import { ShortenPipe } from './shorten.pipe';
 import { BlogsComponent } from './blogs/blogs.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth-interceptor.service';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AuthInterceptorService } from './auth-interceptor.service';
     TdformComponent,
     ReactiveformComponent,
     ShortenPipe,
-    BlogsComponent
+    BlogsComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { AuthService } from './auth.service';
 import { ServersService } from './server.service';
 
 @Component({
@@ -7,10 +9,35 @@ import { ServersService } from './server.service';
   styleUrls: ['./app.component.css'],
   //providers: [ServersService],
 })
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
+  private userSub: Subscription;
+  isLoggedIn = null
+  constructor(private authService: AuthService){}
+  
+  ngOnInit(): void {
+    this.authService.autoLogin()
+    //subscribing the behaviour subject
+    this.userSub = this.authService.user.subscribe((user)=>{
+      if (user === null) {
+        console.log(user)
+        this.isLoggedIn=false
+      }
+      else{
+        console.log(user)
+        this.isLoggedIn=true
+      }
+    })
 
+    console.log(this.isLoggedIn)
+  }
 
+  onLogout(){
+    this.authService.logout()
+  }
 
+  ngOnDestroy(): void {
+    this.userSub.unsubscribe();
+  }
 
 
 

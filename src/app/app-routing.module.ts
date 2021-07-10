@@ -7,6 +7,7 @@ import { ServerdetailsComponent } from './serverdetails/serverdetails.component'
 import { TdformComponent } from './tdform/tdform.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { AuthComponent } from './auth/auth.component';
 
 const appRoutes : Routes =[
     { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const appRoutes : Routes =[
     { path: 'tdform', component: TdformComponent },
     { path: 'reactiveform', component: ReactiveformComponent },
     { path: 'blogs', component: BlogsComponent },
+    { path: 'authenticate', component: AuthComponent },
 ];
 
 @NgModule({
