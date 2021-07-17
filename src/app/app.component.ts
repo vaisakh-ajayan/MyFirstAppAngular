@@ -9,6 +9,7 @@ import { ServersService } from './server.service';
   styleUrls: ['./app.component.css'],
   //providers: [ServersService],
 })
+//https://windows-mashup-angular.web.app
 export class AppComponent implements OnInit, OnDestroy {
   private userSub: Subscription;
   isLoggedIn = null

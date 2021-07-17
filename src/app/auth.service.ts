@@ -17,6 +17,7 @@ export interface authResponse{
   providedIn: 'root'
 })
 export class AuthService {
+  //const API_KEY = environment.api_key;
   user = new BehaviorSubject(null);
   tokenExpiryTimer: number  //to set logout timer
 

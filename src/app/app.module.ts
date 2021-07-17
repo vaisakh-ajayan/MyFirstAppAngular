@@ -20,6 +20,11 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './auth-interceptor.service';
 import { AuthComponent } from './auth/auth.component';
+import { AlertComponent } from './alert/alert.component';
+import { PlaceholderDirective } from './placeholder.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -35,14 +40,18 @@ import { AuthComponent } from './auth/auth.component';
     ReactiveformComponent,
     ShortenPipe,
     BlogsComponent,
-    AuthComponent
+    AuthComponent,
+    AlertComponent,
+    PlaceholderDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule
   ],
   providers: [
     ServersService,

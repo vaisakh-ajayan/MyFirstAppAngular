@@ -1,5 +1,8 @@
 <div class="container">
     <div class="row">
+      <!--use appPlaceholder directive-->
+      <ng-template appPlaceholder></ng-template>
+...
       <div class="col-md-8 offset-md-2">
         <h3 class="text-center">{{ isLoginMode ? "Login" : "Signup" }}</h3>
         <form #authForm="ngForm" (ngSubmit)="submitAuthForm(authForm.value)">
@@ -34,6 +37,11 @@
         <button class="btn btn-primary mt-2" (click)="onSwitchMode()">
           Switch to {{ isLoginMode ? "Signup" : "Login" }}
         </button>
+        <!--if we use dynamic component comment out app-alert selector-->
+        <!-- <app-alert *ngIf="errorMessage"
+        [message]="errorMessage"
+        (close)="onHandleError()">
+        </app-alert> -->
       </div>
     </div>
   </div>

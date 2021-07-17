@@ -1,10 +1,12 @@
+import { animate, state, style, transition } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ServersService } from '../server.service';
 
 @Component({
   selector: 'app-controlpannel',
   templateUrl: './controlpannel.component.html',
-  styleUrls: ['./controlpannel.component.css']
+  styleUrls: ['./controlpannel.component.css'],
+  
 })
 export class ControlpannelComponent implements OnInit {
 
